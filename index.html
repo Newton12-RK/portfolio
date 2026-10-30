@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rexford Kwao | Portfolio</title>
+<meta name="description" content="Portfolio of Rexford Kwao, student at Data Link Institute of Business and Technology studying JavaScript, C++, HTML, and data structures and algorithms.">
+<style>
+:root{
+  --bg:#F4F7F5; --surface:#FFFFFF; --ink:#10201A; --muted:#4A5F55;
+  --green:#0F5C3F; --green-deep:#0A3B29; --gold:#D9A520; --line:#D5E1DA;
+  --on-green:#F4F7F5;
+  --head:"Times New Roman",Times,serif;
+  --body:"Times New Roman",Times,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1612; --surface:#12231C; --ink:#EAF2ED; --muted:#9DB3A8;
+    --green:#3FBF8A; --green-deep:#0A3B29; --gold:#F0BE3A; --line:#24382F;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.65}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:var(--head);font-size:1.1rem}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+@media(max-width:640px){nav ul{gap:14px}nav a{font-size:.85rem}}
+
+/* hero */
+.hero{background:var(--green-deep);color:var(--on-green);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:44px solid var(--gold);opacity:.9}
+.hero .wrap{padding-top:96px;padding-bottom:104px;position:relative;z-index:1}
+.hero p.hi{margin:0 0 12px;color:var(--gold);font-weight:600;font-size:1.1rem}
+.hero h1{font-family:var(--head);font-weight:800;font-size:clamp(2.8rem,8vw,6rem);line-height:1;letter-spacing:-.01em;margin:0 0 22px;max-width:11ch}
+.hero p.lead{max-width:52ch;font-size:1.2rem;margin:0 0 34px;color:#D3E3DA}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#1A1405}
+.btn.line{border:2px solid #7FA898;color:var(--on-green)}
+.rise{animation:rise .8s ease both}
+.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.36s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+/* sections */
+section{padding:84px 0 0}
+section:last-of-type{padding-bottom:84px}
+h2{font-family:var(--head);font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:0;margin:0 0 10px;line-height:1.1}
+.sub{color:var(--muted);margin:0 0 36px;max-width:60ch}
+
+/* education timeline (a real sequence) */
+.tl{list-style:none;margin:0;padding:0 0 0 30px;border-left:3px solid var(--line)}
+.tl li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:20px}
+.tl li::before{content:"";position:absolute;left:-42px;top:28px;width:18px;height:18px;border-radius:50%;background:var(--gold);border:4px solid var(--bg)}
+.tl li.now{border-color:var(--green);box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 18%,transparent)}
+.tl h3{font-family:var(--head);font-size:1.3rem;margin:0 0 2px}
+.tl .meta{color:var(--muted);font-size:.95rem;margin:0 0 8px}
+.tl p{margin:0}
+.badge{display:inline-block;background:var(--green);color:var(--on-green);font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .badge{color:#07140E}}
+
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.course{border-top:4px solid var(--green);background:var(--surface);padding:20px 22px;border-radius:0 0 12px 12px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.course:nth-child(even){border-top-color:var(--gold)}
+.course h3{font-family:var(--head);margin:0 0 6px;font-size:1.15rem}
+.course p{margin:0;color:var(--muted);font-size:.98rem}
+
+/* skills */
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--line);padding:8px 18px;border-radius:999px;font-weight:500}
+
+/* results and projects */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+table{width:100%;border-collapse:collapse}
+.scroll{overflow-x:auto}
+th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line)}
+th{font-family:var(--head);font-size:.95rem;color:var(--muted)}
+.todo{color:var(--muted);font-style:italic}
+.panel h3{font-family:var(--head);margin:0 0 4px;font-size:1.25rem}
+.slip{margin:18px 0 0}
+.slip img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:8px}
+.slip.tall{max-width:520px}
+.slip figcaption{color:var(--muted);font-size:.92rem;margin-top:6px}
+.slips{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.proj .panel h3{font-family:var(--head);margin:0 0 6px}
+
+/* contact */
+.contact{background:var(--green-deep);color:var(--on-green);border-radius:22px;padding:52px 40px}
+.contact h2{margin-bottom:8px}
+.contact p{color:#D3E3DA;max-width:50ch;margin:0 0 26px}
+.contact .btn.line{border-color:#7FA898}
+footer{text-align:center;color:var(--muted);padding:0 24px 48px;font-size:.92rem}
+footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Rexford Kwao</b>
+    <ul>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#learning">Learning</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="hi rise">Hello, I am</p>
+    <h1 class="rise d2">Rexford Kwao</h1>
+    <p class="lead rise d3">A university student from Ghana, learning JavaScript, C++, and HTML at Data Link Institute of Business and Technology. I have hospital IT internship experience and I am looking for my first job in tech.</p>
+    <div class="btns rise d4">
+      <a class="btn gold" href="#contact">Contact me</a>
+      <a class="btn line" href="#education">See my education</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="education">
+    <h2>My education</h2>
+    <p class="sub">The schools I have attended, from primary school to university.</p>
+    <ol class="tl">
+      <li>
+        <h3>Akuse International School</h3>
+        <p class="meta">Primary school, Volta River Authority (VRA), Akuse</p>
+        <p>Where I started my education and built my foundation.</p>
+      </li>
+      <li>
+        <h3>Mankrong Methodist JHS</h3>
+        <p class="meta">Junior high school, Agona East District | Completed 2020</p>
+        <p>I joined in Form 3 and wrote the Basic Education Certificate Examination (BECE) in 2020.</p>
+      </li>
+      <li>
+        <h3>Koforidua Senior High Technical School</h3>
+        <p class="meta">Senior high school | WASSCE 2023</p>
+        <p>I completed my senior high education here, studying Technical Drawing, Physics, Chemistry, and Mathematics (Elective).</p>
+      </li>
+      <li class="now">
+        <h3>Data Link Institute of Business and Technology <span class="badge">Current</span></h3>
+        <p class="meta">BSc. Information Communication Technology | Level 200, evening session</p>
+        <p>I study in the Faculty of Computer Science and Engineering. I am studying programming (JavaScript and C++), HTML, data structures and algorithms, algebra, and economics.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="learning">
+    <h2>What I study</h2>
+    <p class="sub">Courses I have taken at Data Link Institute of Business and Technology.</p>
+    <div class="courses">
+      <div class="course"><h3>Programming</h3><p>Writing code in JavaScript and C++ to solve problems step by step.</p></div>
+      <div class="course"><h3>HTML</h3><p>Building the structure of web pages.</p></div>
+      <div class="course"><h3>Data structures and algorithms</h3><p>Organising data and choosing efficient ways to work with it.</p></div>
+      <div class="course"><h3>Algebra</h3><p>The maths behind logic and problem solving.</p></div>
+      <div class="course"><h3>Economics</h3><p>How people, businesses, and markets make decisions.</p></div>
+    </div>
+
+    <h2 style="margin-top:56px">Skills</h2>
+    <p class="sub">The languages I code in, and the topics I am strong in.</p>
+    <ul class="chips">
+      <li>JavaScript</li><li>C++</li><li>HTML</li><li>Data structures</li><li>Algorithms</li><li>Algebra</li><li>Problem solving</li><li>IT support</li><li>Computer repair</li><li>Databases</li><li>Cybersecurity (learning)</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Work experience</h2>
+    <p class="sub">Hands-on experience outside the classroom.</p>
+    <ol class="tl">
+      <li>
+        <h3>IT Support Intern</h3>
+        <p class="meta">International Maritime Hospital, Tema | May to July 2026</p>
+        <p>I worked in the hospital's IT team, supporting the staff who rely on computers every day.</p>
+        <ul style="margin:12px 0 0;padding-left:20px">
+          <li>Provided IT support to hospital staff</li>
+          <li>Fixed and repaired computers</li>
+          <li>Monitored computers to keep them running well</li>
+          <li>Worked on database projects</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects">
+    <h2>Online projects</h2>
+    <p class="sub">Things I have built and learned outside the classroom.</p>
+    <div class="proj">
+      <div class="panel">
+        <h3>Learning cybersecurity</h3>
+        <p>I have started learning cybersecurity online, alongside my degree.</p>
+      </div>
+      <div class="panel">
+        <h3>This portfolio website</h3>
+        <p>My personal portfolio, hosted for free on GitHub Pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <p class="sub">My official results, copied exactly from my certificates and result slips.</p>
+
+    <div class="panel" style="margin-bottom:20px">
+      <h3>Basic Education Certificate Examination (BECE), 2020</h3>
+      <p class="todo">Mankrong Methodist JHS. Lower numbers are better grades (1 is the best).</p>
+      <div class="scroll"><table><thead><tr><th>Subject</th><th>Grade</th></tr></thead><tbody><tr><td>English Language</td><td>4</td></tr><tr><td>Social Studies</td><td>2</td></tr><tr><td>Religious and Moral Education</td><td>4</td></tr><tr><td>Mathematics</td><td>5</td></tr><tr><td>Integrated Science</td><td>3</td></tr><tr><td>Information and Communication Technology</td><td>2</td></tr><tr><td>Fante</td><td>3</td></tr><tr><td>Basic Design and Technology / Home Economics</td><td>2</td></tr></tbody></table></div>
+      <figure class="slip tall"><a href="images/bece-2020.jpg" target="_blank" rel="noopener"><img src="images/bece-2020.jpg" alt="Scan of my BECE 2020 certificate" loading="lazy"></a><figcaption>My BECE certificate. Tap to enlarge. My photo and ID numbers are covered for privacy.</figcaption></figure>
+    </div>
+
+    <div class="panel" style="margin-bottom:20px">
+      <h3>WASSCE, school candidate</h3>
+      <p class="todo">Two sittings, shown side by side. The 2024 results are provisional.</p>
+      <div class="scroll"><table><thead><tr><th>Subject</th><th>2023 (Koforidua SHTS)</th><th>2024 (Tema High School)</th></tr></thead><tbody><tr><td>Social Studies</td><td>B2</td><td>B3</td></tr><tr><td>English Language</td><td>B3</td><td>C6</td></tr><tr><td>Mathematics (Core)</td><td>F9</td><td>D7</td></tr><tr><td>Integrated Science</td><td>C6</td><td>C6</td></tr><tr><td>Mathematics (Elective)</td><td>F9</td><td>E8</td></tr><tr><td>Chemistry</td><td>D7</td><td>C6</td></tr><tr><td>Physics</td><td>E8</td><td>C6</td></tr><tr><td>Technical Drawing</td><td>B2</td><td>F9</td></tr></tbody></table></div>
+      <div class="slips"><figure class="slip "><a href="images/wassce-2023.jpg" target="_blank" rel="noopener"><img src="images/wassce-2023.jpg" alt="WASSCE 2023 result printout" loading="lazy"></a><figcaption>WASSCE 2023 result. Tap to enlarge.</figcaption></figure><figure class="slip "><a href="images/wassce-2024.jpg" target="_blank" rel="noopener"><img src="images/wassce-2024.jpg" alt="WASSCE 2024 result printout" loading="lazy"></a><figcaption>WASSCE 2024 result (provisional). Tap to enlarge.</figcaption></figure></div>
+    </div>
+
+    <div class="panel" style="margin-bottom:20px">
+      <h3>Level 200, 1st semester, 2025/2026</h3>
+      <p class="todo">BSc. Information Communication Technology, Data Link Institute of Business and Technology.</p>
+      <div class="scroll"><table><thead><tr><th>Code</th><th>Course</th><th>Credit</th><th>Mark</th><th>Grade</th></tr></thead><tbody><tr><td>ADAC213</td><td>Principles of Accounting</td><td>3</td><td>53</td><td>C</td></tr><tr><td>ADMG211</td><td>Fundamentals of Management</td><td>3</td><td>68</td><td>B</td></tr><tr><td>CSIS211</td><td>Object-Oriented Programming with Java</td><td>3</td><td>60</td><td>B-</td></tr><tr><td>CSIS223</td><td>Digital Logic and Design</td><td>3</td><td>70</td><td>B+</td></tr><tr><td>CSIS235</td><td>Data Structure and Design</td><td>3</td><td>40</td><td>F</td></tr><tr><td>INCT211</td><td>Management Science</td><td>3</td><td>53</td><td>C</td></tr></tbody></table></div>
+      <p><b>Semester average: 57.33. Cumulative average: 61.00.</b></p>
+      <p class="todo">Data Structure and Design: I was unwell during this semester and I will re-sit this course.</p>
+      <figure class="slip "><a href="images/level200-sem1.jpg" target="_blank" rel="noopener"><img src="images/level200-sem1.jpg" alt="Level 200 first semester result slip" loading="lazy"></a><figcaption>Result slip from my student portal. Tap to enlarge.</figcaption></figure>
+    </div>
+
+    <div class="panel">
+      <h3>Level 200, 2nd semester, 2025/2026</h3>
+      <div class="scroll"><table><thead><tr><th>Code</th><th>Course</th><th>Credit</th><th>Mark</th><th>Grade</th></tr></thead><tbody><tr><td>CSIS212</td><td>Organizational Architecture</td><td>3</td><td>68</td><td>B</td></tr><tr><td>CSIS224</td><td>Database Design I</td><td>3</td><td>68</td><td>B</td></tr><tr><td>INCT212</td><td>Management Information Systems</td><td>3</td><td>75</td><td>A-</td></tr><tr><td>INCT224</td><td>Micro Processors Management</td><td>3</td><td>76</td><td>A-</td></tr><tr><td>INCT248</td><td>Business Intelligence and Analytics</td><td>3</td><td>63</td><td>B-</td></tr><tr><td>MATH212</td><td>Probability and Statistics</td><td>3</td><td>70</td><td>B+</td></tr></tbody></table></div>
+      <p><b>Semester average: 70.00. Cumulative average: 63.16.</b></p>
+      <figure class="slip "><a href="images/level200-sem2.jpg" target="_blank" rel="noopener"><img src="images/level200-sem2.jpg" alt="Level 200 second semester result slip" loading="lazy"></a><figcaption>Result slip from my student portal. Tap to enlarge.</figcaption></figure>
+      <p class="todo">Averages are weighted marks out of 100, as printed on my result slips. I am still studying, so these results are not final.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2>Let's work together</h2>
+      <p>I am open to internships, junior roles, and projects. Send me a message and I will reply.</p>
+      <div class="btns">
+        <a class="btn gold" href="mailto:rexford.tettehkwao@gmail.com">Email me</a>
+        <a class="btn line" href="https://github.com/Newton12-RK">My GitHub</a>
+        <a class="btn line" href="tel:+233208381604">Call 020 838 1604</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Rexford Kwao. All rights reserved.</p>
+  <p>The content of this website, including my text and results, may not be copied or reused without my permission.</p>
+</footer>
+
+</body>
+</html>
